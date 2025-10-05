@@ -1,4 +1,4 @@
-// 在 Arduino Uno R3、ESP32-S3 上测试
+// 在 Arduino Uno R3、Arduino Nano、ESP32-S3 N16R8、NodeMCU 1.0 (ESP-12E) 上测试
 
 // 标准音体（简谱定义）
 unsigned short NOTE_L5 = 311;   // Eb4
@@ -15,8 +15,8 @@ unsigned short NOTE_H1 = 831;   // Ab5
 const unsigned short REST = 0;  //休止符，设为常量
 
 // 全局变量
-const unsigned short buzzerPin = 42;  //Pin设为常量
-unsigned short tempo = 136;           //速度不设为常量，因为考虑变速
+const unsigned short buzzerPin = 13;  //Pin设为常量
+unsigned short tempo = 140;           //速度不设为常量，因为考虑变速
 
 float wholenote = (60000 * 4) / tempo;  // 全音符的时程由音乐速度计算得到
 float duration = 0;                     // 初始化某个音符的时程

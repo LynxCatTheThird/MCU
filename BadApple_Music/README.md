@@ -2,7 +2,7 @@
 
 ### 兼容的开发板
 
-理论上所有支持 `tone()` 的开发板，在 Arduino Uno R3、ESP32-S3 上测试通过。
+理论上所有支持 `tone()` 的开发板，在 Arduino Uno R3、Arduino Nano、ESP32-S3 N16R8、NodeMCU 1.0 上测试通过。
 
 ### 元器件
 
