@@ -1,27 +1,27 @@
 // 在 Arduino Uno R3、Arduino Nano、ESP32-S3 N16R8、NodeMCU 1.0 (ESP-12E) 上测试
 
 // 标准音体（简谱定义）
-unsigned short NOTE_L5 = 311;   // Eb4
-unsigned short NOTE_LS5 = 330;  // E4
-unsigned short NOTE_L6 = 349;   // F4
-unsigned short NOTE_L7 = 392;   // G4
-unsigned short NOTE_1 = 415;    // Ab4
-unsigned short NOTE_2 = 466;    // Bb4
-unsigned short NOTE_3 = 523;    // C5
-unsigned short NOTE_5 = 622;    // Eb5
-unsigned short NOTE_6 = 698;    // F5
-unsigned short NOTE_7 = 784;    // G5
-unsigned short NOTE_H1 = 831;   // Ab5
-const unsigned short REST = 0;  //休止符，设为常量
+uint16_t NOTE_L5 = 311;   // Eb4
+uint16_t NOTE_LS5 = 330;  // E4
+uint16_t NOTE_L6 = 349;   // F4
+uint16_t NOTE_L7 = 392;   // G4
+uint16_t NOTE_1 = 415;    // Ab4
+uint16_t NOTE_2 = 466;    // Bb4
+uint16_t NOTE_3 = 523;    // C5
+uint16_t NOTE_5 = 622;    // Eb5
+uint16_t NOTE_6 = 698;    // F5
+uint16_t NOTE_7 = 784;    // G5
+uint16_t NOTE_H1 = 831;   // Ab5
+const uint8_t REST = 0;  //休止符，设为常量
 
 // 全局变量
-const unsigned short buzzerPin = 13;  //Pin设为常量
-unsigned short tempo = 140;           //速度不设为常量，因为考虑变速
+const uint8_t buzzerPin = 13;  //Pin设为常量
+uint8_t tempo = 140;           //速度不设为常量，因为考虑变速
 
 float wholenote = (60000 * 4) / tempo;  // 全音符的时程由音乐速度计算得到
 float duration = 0;                     // 初始化某个音符的时程
 
-void playNote(unsigned short noteMelody, float noteDurationValue) {  //播放函数
+void playNote(uint16_t noteMelody, float noteDurationValue) {  //播放函数
   duration = 0;                                                      // 某个音符的时程
 
   if (noteDurationValue > 0) {  // 几分音符就传入几
@@ -38,8 +38,8 @@ void playNote(unsigned short noteMelody, float noteDurationValue) {  //播放函
   noTone(buzzerPin);  // 记得闭嘴
 }
 
-void chapterAPart(unsigned short times) {
-  for (unsigned short i = 1; i <= times; i++) {
+void chapterAPart(uint8_t times) {
+  for (uint8_t i = 1; i <= times; i++) {
     playNote(NOTE_L6, 8);
     playNote(NOTE_L6, 16);
     playNote(NOTE_L6, 8);
@@ -114,8 +114,8 @@ void chapterB() {
   playNote(REST, 8);
 }
 
-void chapterCMain(unsigned short times) {
-  for (unsigned short i = 1; i <= times; i++) {
+void chapterCMain(uint8_t times) {
+  for (uint8_t i = 1; i <= times; i++) {
     playNote(NOTE_5, 8);
     playNote(NOTE_6, 8);
     playNote(NOTE_3, 8);

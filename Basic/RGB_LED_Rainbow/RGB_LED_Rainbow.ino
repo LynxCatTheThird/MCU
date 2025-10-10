@@ -14,7 +14,7 @@
 // 参数3: 像素类型和速度标志。对于 ESP32-S3 上的 WS2812，NEO_GRB + NEO_KHZ800 是最常见的组合
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-int r = 255, g = 0, b = 0;  //我选择了全局变量，感觉在 loop 里 int 怪怪的？
+uint8_t r = 255, g = 0, b = 0;  //我选择了全局变量，感觉在 loop 里 uint8_t 怪怪的？
 
 void setup() {
   strip.begin();            // 初始化 NeoPixel 库
